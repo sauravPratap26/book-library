@@ -1,0 +1,308 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Styling the navigation bar */
+  .topnav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #333;
+    padding: 10px 20px;
+    gap: 15px;
+  }
+  
+  /* Style the button */
+  .topnav button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .topnav button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style the label */
+  .topnav label {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Style the dropdown */
+  .topnav select {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .topnav input {
+    padding: 7px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  /* Centered fixed-width contents */
+  .contents {
+    max-width: 100%;
+    height: 100%;
+    margin: 20px auto;
+    background: #9c1616;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sticky pagination at the bottom */
+  .pages {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-10%);
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Arrows */
+  .pages button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .pages button:hover {
+    opacity: 0.7;
+  }
+
+  .tiles {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%; /* Ensures full width */
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .tiles:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .listThumbnails {
+    width: 110px; 
+    height: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+    transition: transform 0.2s;
+  }
+  
+  .tiles:hover .listThumbnails {
+    transform: scale(1.05);
+  }
+  
+  .listBookDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+  
+  .listBookTitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+    text-transform: capitalize;
+  }
+  
+  .listBookAuthor {
+    font-size: 18px;
+    color: #444;
+    font-weight: 500;
+  }
+  
+  .listBookPublisher,
+  .listBookPublishDate {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .listBookDescription {
+    font-size: 15px;
+    color: #777;
+    line-height: 1.4;
+    margin-top: 5px;
+    max-height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+  
+  /* Button */
+  .listBookDetails .bookLink {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #0073e6;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    width: max-content;
+    transition: background 0.2s ease;
+  }
+  
+  .listBookDetails .bookLink:hover {
+    background: #005bb5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .tiles {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .listThumbnails {
+      margin-bottom: 10px;
+    }
+    .listBookDetails .bookLink {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  .card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card img {
+    width: 100%;
+    max-width: 160px; /* Restrict thumbnail size */
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover img {
+    transform: scale(1.05);
+  }
+  
+  .card-details {
+    margin-top: 12px;
+    width: 100%;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 6px;
+  }
+  
+  .card-author {
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+  }
+  
+  .card-publisher,
+  .card-date {
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0;
+  }
+  
+  .card-description {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+    margin-top: 5px;
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+  }
+  
+  /* Button */
+  .card .bookLink {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #0073e6;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s ease;
+  }
+  
+  .card .bookLink:hover {
+    background: #005bb5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .cards-container {
+      grid-template-columns: 1fr; /* Full width on smaller screens */
+    }
+  }
+  
+  /* Show book details including title, author, publisher, published date, and thumbnail */
